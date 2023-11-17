@@ -10,5 +10,5 @@ $ npm i
 ```sh
 $ npm start
 ```
-* npm start will start the server on port 3000 which is .env file. You can change portnumber according to your wish.
+ npm start will start the server on port 3000 which is .env file. You can change portnumber according to your wish.
 
