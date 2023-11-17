@@ -1,4 +1,4 @@
-# User Management API (PDR.cloud needs Technical Challenge)
+# User Management API (PDR.cloud Technical Challenge)
 
 ## I used Node.js, TypeScript, Express, RoutingControllers, ClassValidators 
 
