@@ -55,3 +55,8 @@ user-management-api/
 |-- tsconfig.json
 ```
 
+### User (create, error)
+* creating user
+  ![befor creating user (users.json)](relative/path/to/your/image.jpg)
+
+
