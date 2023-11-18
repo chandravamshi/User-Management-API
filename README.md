@@ -57,6 +57,6 @@ user-management-api/
 
 ### User (create, error)
 * creating user
-  ![befor creating user (users.json)](images/befor creating user.png)
+  ![befor creating user (users.json)](/Users/chandravamshidasyam/Downloads/user-management-api/images/befor_creating_user.png)
 
 
