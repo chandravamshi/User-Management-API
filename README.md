@@ -55,9 +55,21 @@ user-management-api/
 |-- tsconfig.json
 ```
 
+### API DOC example (used apidoc lib) 
+
 ### User (create, error)
 #### creating user
 * Befor creating new user(users.json)
   ![befor creating user (users.json)](./images/befor_creating_user.png)
+
+* postman request for creating new user
+  ![postman request creating user (users.json)](./images/postman_create_user_req.png)
+
+* logger i used morgan lib for this
+  ![logger while creating user (users.json)](./images/logger_post_req_create_user.png)
+
+* after creating new user(users.json)
+  ![after creating user (users.json)](./images/after_post_req_create_user_users_file.png)
+
 
 
