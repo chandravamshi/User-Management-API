@@ -56,6 +56,8 @@ user-management-api/
 ```
 
 ### API DOC example (used apidoc lib) 
+* A sample image of API Doc
+  ![apidoc sampel image](./images/apidoc_sample.png)
 
 ### User (create, error)
 #### creating user
