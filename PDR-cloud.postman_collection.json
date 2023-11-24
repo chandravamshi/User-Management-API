@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "c3bfc231-827d-4a1d-b840-d14de0db624f",
+		"name": "PDR:cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11721308"
+	},
+	"item": [
+		{
+			"name": "update vechile preference",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWF0IjoxNzAwODI0OTQ2LCJleHAiOjE3MDA4MjU4NDZ9.bFGlUbySGQ8SaW9YpFIJb405pdcyHcAMOSJSZZZ9pm8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"make\":\"Ford\",\n    \"model\":\"Mustang\",\n    \"year\":2025\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vechile-preferences/?preferenceId=1700824956987",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vechile-preferences",
+						""
+					],
+					"query": [
+						{
+							"key": "preferenceId",
+							"value": "1700824956987"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test1\",\n    \"password\":\"Test123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Test123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test1\",\n    \"password\":\"Test123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add vechile prefernce",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWF0IjoxNzAwODI0OTQ2LCJleHAiOjE3MDA4MjU4NDZ9.bFGlUbySGQ8SaW9YpFIJb405pdcyHcAMOSJSZZZ9pm8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"make\":\"Ford\",\n    \"model\":\"Mustang\",\n    \"year\":2024\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vechile-preferences/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vechile-preferences",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete vechile prefernce",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWF0IjoxNzAwODE5NDA4LCJleHAiOjE3MDA4MjAzMDh9.RlQyHJ_ANHudcd4Z7vibNrhC_O4bOeAx64J9E0jZsOw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/vechile-preferences/?preferenceId=1700824956987",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vechile-preferences",
+						""
+					],
+					"query": [
+						{
+							"key": "preferenceId",
+							"value": "1700824956987"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
