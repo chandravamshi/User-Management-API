@@ -4,9 +4,12 @@
 * User Registration and Authentication: done
 * Vehicle Preferences: done
 * Logging:done
-* Documentation:done
+* Documentation:done (i showed you basic example using apidoc lib i wanted to create this for all request but i was sick and due to time contrant i did basic so you that i know something)
 ### what i didn't did
 * Testing: didn't done (i was sick and this is the only thing i didn't do. any way i know testing i used jest in my work)
+
+### Postman
+* i used postman for making request so i saved all my request and aded here in this project as PDR-cloud it is post man collection json file. we can do a lot but due to my sickness and time constrant atleaast i did basics.
 
 ## I used Node.js, TypeScript, Express, RoutingControllers, ClassValidators 
 
