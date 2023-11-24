@@ -67,7 +67,7 @@ user-management-api/
 * A sample image of API Doc
   ![apidoc sampel image](./images/apidoc_sample.png)
 
-### User (create, error)
+### User 
 #### creating user
 * Befor creating new user(users.json)
   ![befor creating user (users.json)](./images/befor_creating_user.png)
@@ -80,6 +80,19 @@ user-management-api/
 
 * after creating new user(users.json)
   ![after creating user (users.json)](./images/after_post_req_create_user_users_file.png)
+
+### User Vechile preferences - only authenticated user can insert the vechile preferences
+#### create vechile preference
+* Add new vechile preference
+  ![add vechile preference (vechilepreference.json)](./images/add_vechile_preference.png)
+  ![add vechile preference (vechilepreference.json)](./images/add_vechile_prerence_json.png.png)
+
+#### update vechile preference
+  ![update vechile preference (vechilepreference.json)](./images/update_vechile_preference.png)
+  ![update vechile preference (vechilepreference.json)](./images/update_vechile_preference_json.png)
+#### delete vechile preference
+  ![delete vechile preference (vechilepreference.json)](./images/delete_vechile_preference.png)
+  
 
 
 
