@@ -1,5 +1,13 @@
 # User Management API (PDR.cloud Technical Challenge)
 
+### what i did (everthing with screenshot explained in this readmefile)
+* User Registration and Authentication: done
+* Vehicle Preferences: done
+* Logging:done
+* Documentation:done
+### what i didn't did
+* Testing: didn't done (i was sick and this is the only thing i didn't do. any way i know testing i used jest in my work)
+
 ## I used Node.js, TypeScript, Express, RoutingControllers, ClassValidators 
 
 ### Setup
