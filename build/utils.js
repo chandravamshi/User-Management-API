@@ -15,12 +15,6 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -38,35 +32,42 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserService = void 0;
-const typedi_1 = require("typedi");
-const bcrypt = __importStar(require("bcrypt"));
-const utils_1 = require("../utils");
-let UserService = class UserService {
-    registerUser(newUser) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const users = yield (0, utils_1.readData)('src/database/users.json');
-            const userExists = users.find(user => user.name === newUser.name);
-            if (userExists) {
-                // User already exists
-                throw new Error('User already exists');
-            }
-            // Hash the password 
-            try {
-                newUser.password = yield bcrypt.hash(newUser.password, 10);
-                // Assign an ID and store the user  
-                newUser.id = users.length + 1;
-                users.push(newUser);
-                yield (0, utils_1.writeData)('src/database/users.json', users);
-                return newUser;
-            }
-            catch (error) {
-                throw error;
-            }
-        });
-    }
-};
-exports.UserService = UserService;
-exports.UserService = UserService = __decorate([
-    (0, typedi_1.Service)()
-], UserService);
+exports.getUserDetails = exports.writeData = exports.readData = void 0;
+const fs = __importStar(require("fs"));
+const util = __importStar(require("util"));
+const readFile = util.promisify(fs.readFile);
+const writeFile = util.promisify(fs.writeFile);
+function readData(filePath) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield readFile(filePath, 'utf8');
+            return JSON.parse(data);
+        }
+        catch (err) {
+            console.error('Error reading file:', err);
+            throw err;
+        }
+    });
+}
+exports.readData = readData;
+function writeData(filePath, data) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const jsonData = JSON.stringify(data, null, 2);
+            yield writeFile(filePath, jsonData, 'utf8');
+        }
+        catch (err) {
+            console.error('Error writing file:', err);
+            throw err;
+        }
+    });
+}
+exports.writeData = writeData;
+function getUserDetails(userName) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const users = yield readData('src/database/users.json');
+        const user = users.find(user => user.name === userName);
+        return user;
+    });
+}
+exports.getUserDetails = getUserDetails;

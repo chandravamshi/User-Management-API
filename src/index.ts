@@ -8,6 +8,7 @@ import {
   import { Container } from "typedi";
 import { UserController } from "./controllers/userController";
 import { AuthMiddleware } from "./middelware/authMiddelware";
+import { UserVechilePreferencesController } from "./controllers/userVechilePreferenceController";
 
   useContainer(Container);
   var compression = require("compression");
@@ -25,7 +26,7 @@ import { AuthMiddleware } from "./middelware/authMiddelware";
   
   
   useExpressServer(app, {
-    controllers: [UserController],
+    controllers: [UserController,UserVechilePreferencesController],
     middlewares:[AuthMiddleware]
   });
   

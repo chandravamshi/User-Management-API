@@ -7,6 +7,7 @@ require("reflect-metadata");
 const typedi_1 = require("typedi");
 const userController_1 = require("./controllers/userController");
 const authMiddelware_1 = require("./middelware/authMiddelware");
+const userVechilePreferenceController_1 = require("./controllers/userVechilePreferenceController");
 (0, routing_controllers_1.useContainer)(typedi_1.Container);
 var compression = require("compression");
 var morgan = require("morgan");
@@ -21,7 +22,7 @@ exports.app = (0, routing_controllers_1.createExpressServer)({
 exports.app.use(morgan(process.env.LOG_FORMAT || "common"));
 exports.app.use(compression());
 (0, routing_controllers_1.useExpressServer)(exports.app, {
-    controllers: [userController_1.UserController],
+    controllers: [userController_1.UserController, userVechilePreferenceController_1.UserVechilePreferencesController],
     middlewares: [authMiddelware_1.AuthMiddleware]
 });
 exports.app.listen(process.env.PORT, () => {

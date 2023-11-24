@@ -32,17 +32,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthMiddleware = void 0;
 const jwt = __importStar(require("jsonwebtoken"));
 const typedi_1 = require("typedi");
+const utils_1 = require("../utils");
 let AuthMiddleware = class AuthMiddleware {
     use(request, response, next) {
-        const authHeader = request.headers.authorization;
-        if (!authHeader) {
+        const token = request.headers.authorization;
+        //console.log(authHeader)
+        if (!token) {
             return response.status(401).send({ message: 'No authorization token provided' });
         }
-        const token = authHeader.split(' ')[1]; // Expecting "Bearer TOKEN"
         try {
             const decoded = jwt.verify(token, 'access-token-secret');
-            request.user = decoded; // Attach user information to request
-            next();
+            // Attach user information to request
+            (0, utils_1.getUserDetails)(decoded.username).then((userDetails) => {
+                request.user = userDetails;
+                next();
+            });
         }
         catch (error) {
             return response.status(401).send({ message: 'Unauthorized: Invalid token' });

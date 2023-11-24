@@ -61,7 +61,6 @@ const typedi_1 = require("typedi");
 const user_dto_1 = require("../dto/user.dto");
 const jwt = __importStar(require("jsonwebtoken"));
 const userService_1 = require("../services/userService");
-const authMiddelware_1 = require("../middelware/authMiddelware");
 const validationErrors_1 = require("../middelware/validationErrors");
 let UserController = class UserController {
     constructor(userService) {
@@ -136,12 +135,24 @@ let UserController = class UserController {
             }
         });
     }
-    login(user) {
+    login(user, response) {
         return __awaiter(this, void 0, void 0, function* () {
-            // Authenticate user
-            const accessToken = jwt.sign({ userId: user.id }, 'access-token-secret', { expiresIn: '15m' });
-            const refreshToken = jwt.sign({ userId: user.id }, 'refresh-token-secret', { expiresIn: '7d' });
-            // Save refreshToken with user and return tokens
+            // Authenticate user.I am using 'access-token-secret' as secret to decode
+            try {
+                const accessToken = jwt.sign({ username: user.name }, 'access-token-secret', { expiresIn: '15m' });
+                const refreshToken = jwt.sign({ username: user.name }, 'refresh-token-secret', { expiresIn: '7d' });
+                // Save refreshToken with user and return tokens
+                return response.status(200).send({
+                    status: "success",
+                    data: {
+                        accessToken,
+                        refreshToken,
+                    }
+                });
+            }
+            catch (error) {
+                throw error;
+            }
         });
     }
 };
@@ -161,17 +172,11 @@ __decorate([
 ], UserController.prototype, "register", null);
 __decorate([
     (0, routing_controllers_1.Post)('/login'),
-    (0, routing_controllers_1.UseBefore)(authMiddelware_1.AuthMiddleware),
     (0, routing_controllers_1.UseAfter)(validationErrors_1.ValidationErrors),
-    __param(0, (0, routing_controllers_1.Body)({
-        validate: {
-            whitelist: true,
-            forbidNonWhitelisted: true,
-            validationError: { target: false, value: false },
-        },
-    })),
+    __param(0, (0, routing_controllers_1.Body)()),
+    __param(1, (0, routing_controllers_1.Res)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [user_dto_1.User]),
+    __metadata("design:paramtypes", [user_dto_1.User, Object]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "login", null);
 exports.UserController = UserController = __decorate([
