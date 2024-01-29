@@ -1,15 +1,13 @@
 # User Management API (PDR.cloud Technical Challenge)
 
 ### what i did (everthing with screenshot explained in this readmefile)
-* User Registration and Authentication: done
-* Vehicle Preferences: done
-* Logging:done
-* Documentation:done (i showed you basic example using apidoc lib i wanted to create this for all request but i was sick and due to time contrant i did basic so you that i know something)
-### what i didn't did
-* Testing: didn't done (i was sick and this is the only thing i didn't do. any way i know testing i used jest in my work)
+* User Registration and Authentication
+* Vehicle Preferences
+* Logging
+* Documentation(i showed you basic example using apidoc lib)
 
 ### Postman
-* i used postman for making request so i saved all my request and aded here in this project as PDR-cloud it is post man collection json file. we can do a lot but due to my sickness and time constrant atleaast i did basics.
+* i used postman for making request so i saved all my request and aded here in this project as cloud it is post man collection json file. 
 
 ## I used Node.js, TypeScript, Express, RoutingControllers, ClassValidators 
 
