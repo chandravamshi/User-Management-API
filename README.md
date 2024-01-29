@@ -1,4 +1,12 @@
-# User Management API (PDR.cloud Technical Challenge)
+# User Management API Backend
+## Backend API with authentication and authorization doing crud operations. Used state of art libs for clean and efficient code.
+
+## I used Node.js, TypeScript, Express, RoutingControllers, ClassValidators 
+
+### Postman
+* I used postman for making request so i saved all my request and aded here in this project as cloud it is post man collection json file. 
+
+
 
 ### what i did (everthing with screenshot explained in this readmefile)
 * User Registration and Authentication
@@ -6,10 +14,6 @@
 * Logging
 * Documentation(i showed you basic example using apidoc lib)
 
-### Postman
-* i used postman for making request so i saved all my request and aded here in this project as cloud it is post man collection json file. 
-
-## I used Node.js, TypeScript, Express, RoutingControllers, ClassValidators 
 
 ### Setup
 * clone the repo
